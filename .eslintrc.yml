@@ -1,0 +1,87 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - plugin:react/recommended
+  - standard-with-typescript
+  - prettier
+overrides: []
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: latest
+  sourceType: module
+  project: ['./tsconfig.json']
+plugins:
+  - react
+  - react-hooks
+  - '@typescript-eslint'
+  - import
+  - unused-imports
+rules:
+  react/require-default-props: off
+  no-shadow: off
+  '@typescript-eslint/no-shadow': ['error']
+  react/jsx-props-no-spreading: off
+  '@typescript-eslint/no-misused-promises': off
+  react/react-in-jsx-scope: off
+  '@typescript-eslint/no-unused-vars': off
+  '@typescript-eslint/ban-ts-comment': off
+  no-use-before-define: off
+  '@typescript-eslint/no-use-before-define': ['error']
+  import/prefer-default-export: off
+  '@typescript-eslint/restrict-template-expressions': off
+  react/function-component-definition:
+    [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ]
+  import/extensions:
+    [
+      'error',
+      'ignorePackages',
+      { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' },
+    ]
+  react/jsx-filename-extension: ['error', { extensions: ['.jsx', '.tsx'] }]
+  no-void: ['error', { allowAsStatement: true }]
+  no-restricted-imports: ['error', { patterns: ['./', '../'] }]
+  unused-imports/no-unused-imports: warn
+  import/order:
+    [
+      'warn',
+      {
+        groups:
+          [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+            'object',
+            'type',
+          ],
+        'newlines-between': 'always',
+        pathGroupsExcludedImportTypes: ['builtin'],
+        alphabetize: { order: 'asc', caseInsensitive: true },
+        pathGroups:
+          [
+            { pattern: 'src/types/**', group: 'internal', position: 'before' },
+            {
+              pattern: 'src/repositories/**',
+              group: 'internal',
+              position: 'before',
+            },
+          ],
+      },
+    ]
+settings:
+  import/resolver:
+    node:
+      paths: ['src']
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
+    typescript: []
