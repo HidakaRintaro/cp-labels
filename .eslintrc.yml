@@ -32,6 +32,7 @@ rules:
   '@typescript-eslint/no-use-before-define': ['error']
   import/prefer-default-export: off
   '@typescript-eslint/restrict-template-expressions': off
+  '@typescript-eslint/explicit-function-return-type': warn # 一旦はwarnにして解決方法が分かったら対応
   react/function-component-definition:
     [
       2,
