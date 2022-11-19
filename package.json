@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "lint": "eslint --ext .ts,.tsx ./src",
-    "fix": "yarn format && yarn lint:fix",
+    "fix": "yarn fmt && yarn lint:fix",
     "fmt": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'"
   },
@@ -25,6 +25,7 @@
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.42.1",
     "@vitejs/plugin-react": "^2.2.0",
+    "autoprefixer": "^10.4.13",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
@@ -37,8 +38,11 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
+    "postcss": "^8.4.19",
     "prettier": "^2.7.1",
-    "typescript": "*",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss": "^3.2.4",
+    "typescript": "~4.8",
     "vite": "^3.2.3"
   },
   "lint-staged": {
