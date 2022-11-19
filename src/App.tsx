@@ -1,7 +1,8 @@
 import { FC } from 'react'
 
 import '~/index.css'
+import { Router } from '~/router/Router'
 
-const App: FC = () => <h1 className="bg-blue-400 font-bold text-red-500">サンプル</h1>
+const App: FC = () => <Router />
 
 export default App
