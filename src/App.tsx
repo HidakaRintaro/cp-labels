@@ -1,8 +1,6 @@
-import { FC } from 'react'
-
-import '~/index.css'
 import { Router } from '~/router/Router'
+import '~/index.css'
 
-const App: FC = () => <Router />
+const App = () => <Router />
 
 export default App
