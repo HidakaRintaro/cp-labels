@@ -8,7 +8,12 @@ interface LabelsParam {
   token: string
 }
 
-export const useGetLabels = () => {
+export const useGetLabels = (): {
+  labels: Label[]
+  getLabels: ({ owner, repo, token }: LabelsParam) => void
+  isLoading: boolean
+  isError: boolean
+} => {
   const [labels, setLabels] = useState<Label[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setisError] = useState(false)
@@ -23,13 +28,18 @@ export const useGetLabels = () => {
         Authorization: `Bearer ${token}`
       }
     })
-      .then(async response => setLabels(await response.json()))
-      .catch(e => {
+      .then(async response => {
+        if (response.status === 200) {
+          setLabels(await response.json())
+        } else {
+          throw new Error('APIからのLablesの取得に失敗しました')
+        }
+      })
+      .catch(() => {
         setisError(true)
-        console.log(e)
+        setLabels([])
       })
       .finally(() => setIsLoading(false))
   }
-
   return { labels, getLabels, isLoading, isError }
 }
