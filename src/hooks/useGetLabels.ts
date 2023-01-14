@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Dispatch, useState } from 'react'
 
 import { Label } from '~/types/label'
 
@@ -10,6 +10,7 @@ interface LabelsParam {
 
 export const useGetLabels = (): {
   labels: Label[]
+  setLabels: Dispatch<React.SetStateAction<Label[]>>
   getLabels: ({ owner, repo, token }: LabelsParam) => void
   isLoading: boolean
   isError: boolean
@@ -41,5 +42,5 @@ export const useGetLabels = (): {
       })
       .finally(() => setIsLoading(false))
   }
-  return { labels, getLabels, isLoading, isError }
+  return { labels, setLabels, getLabels, isLoading, isError }
 }

@@ -1,6 +1,7 @@
-import { FC, useCallback, useState } from 'react'
+import { Dispatch, FC, useCallback, useState } from 'react'
 
 import { useGetLabels } from '~/hooks/useGetLabels'
+import { Label } from '~/types/label'
 
 export const Home: FC = () => {
   const [exportOwner, setExportOwner] = useState('')
@@ -13,16 +14,26 @@ export const Home: FC = () => {
 
   const {
     labels: exportLabels,
+    setLabels: setExportLabels,
     getLabels: getExportLabels,
     isLoading: isExportLoading,
     isError: isExportError
   } = useGetLabels()
   const {
     labels: importLabels,
+    setLabels: setImportLabels,
     getLabels: getImportLabels,
     isLoading: isImportLoading,
     isError: isImportError
   } = useGetLabels()
+
+  const handleDeleteLabelClick = useCallback(
+    (labels: Label[], setLabels: Dispatch<React.SetStateAction<Label[]>>, id: number) => {
+      const labelsFiltered = labels.filter(label => label.id !== id)
+      setLabels(labelsFiltered)
+    },
+    []
+  )
 
   return (
     <div className="container mx-auto">
@@ -94,7 +105,12 @@ export const Home: FC = () => {
                         <td className="border-b border-slate-100 p-4 text-xs text-slate-500">{label.description}</td>
                         <td className="border-b border-slate-100 p-4 text-xs text-slate-500">#{label.color}</td>
                         <td className="w-16 border-b border-slate-100 p-4 text-xs text-slate-500">
-                          <span className="cursor-pointer hover:text-blue-500 hover:underline">Delete</span>
+                          <span
+                            className="cursor-pointer hover:text-blue-500 hover:underline"
+                            onClick={() => handleDeleteLabelClick(exportLabels, setExportLabels, label.id)}
+                          >
+                            Delete
+                          </span>
                         </td>
                       </tr>
                     ))}
@@ -169,7 +185,12 @@ export const Home: FC = () => {
                         <td className="border-b border-slate-100 p-4 text-xs text-slate-500">{label.description}</td>
                         <td className="border-b border-slate-100 p-4 text-xs text-slate-500">#{label.color}</td>
                         <td className="w-16 border-b border-slate-100 p-4 text-xs text-slate-500">
-                          <span className="cursor-pointer hover:text-blue-500 hover:underline">Delete</span>
+                          <span
+                            className="cursor-pointer hover:text-blue-500 hover:underline"
+                            onClick={() => handleDeleteLabelClick(importLabels, setImportLabels, label.id)}
+                          >
+                            Delete
+                          </span>
                         </td>
                       </tr>
                     ))}
