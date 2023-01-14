@@ -50,6 +50,7 @@ rules:
   react/jsx-filename-extension: ['error', { extensions: ['.jsx', '.tsx'] }]
   no-void: ['error', { allowAsStatement: true }]
   no-restricted-imports: ['error', { patterns: ['./', '../'] }]
+  no-console: ['error']
   unused-imports/no-unused-imports: warn
   import/order:
     [
