@@ -1,14 +1,17 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: "./",
+  root: './',
   server: {
-    port: 3333,
+    port: 3333
   },
   resolve: {
-    alias: [{ find: "~", replacement: "/src" }],
+    alias: [
+      { find: './runtimeConfig', replacement: './runtimeConfig.browser' },
+      { find: '~', replacement: '/src' }
+    ]
   },
-  plugins: [react()],
-});
+  plugins: [react()]
+})
