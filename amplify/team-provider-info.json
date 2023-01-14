@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mvlabels-dev-12115-authRole",
+      "UnauthRoleArn": "arn:aws:iam::197150908217:role/amplify-mvlabels-dev-12115-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::197150908217:role/amplify-mvlabels-dev-12115-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-mvlabels-dev-12115-deployment",
+      "UnauthRoleName": "amplify-mvlabels-dev-12115-unauthRole",
+      "StackName": "amplify-mvlabels-dev-12115",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:197150908217:stack/amplify-mvlabels-dev-12115/7802fad0-9427-11ed-a2f7-0691a3779887",
+      "AmplifyAppId": "dzdxlw9kuqsdu"
+    },
+    "categories": {
+      "auth": {
+        "mvlabels4f796ef3": {}
+      }
+    }
+  }
+}
