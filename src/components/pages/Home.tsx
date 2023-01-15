@@ -6,7 +6,6 @@ import { InputText } from '~/components/atoms/InputText'
 import { LabelsTable } from '~/components/organisms/LabelsTable'
 import { useGetLabels } from '~/hooks/useGetLabels'
 import { useMoveLabels } from '~/hooks/useMoveLabels'
-import { usePageTracking } from '~/hooks/useTracking'
 import { PlusIcon } from '~/icons/PlusIcon'
 
 export const Home: FC = () => {
@@ -45,8 +44,6 @@ export const Home: FC = () => {
       getImportLabels({ owner: importOwner, repo: importRepo, token: importToken })
     }
   }, [isPostOk])
-
-  usePageTracking()
 
   return (
     <>

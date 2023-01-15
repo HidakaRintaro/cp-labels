@@ -15,6 +15,17 @@ export const Head: FC<HeadProps> = props => {
         name="description"
         content="GitHubでリポジトリ間のLabelのコピーができるツールです。 A tool that allows you to copy Label between repositories on GitHub."
       />
+      {/* Google tag (gtag.js) */}
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.GA4_MEASUREMENT_ID}`}></script>
+      <script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${import.meta.env.GA4_MEASUREMENT_ID}');
+        `}
+      </script>
     </Helmet>
   )
 }
