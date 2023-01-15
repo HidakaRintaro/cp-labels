@@ -17,6 +17,7 @@ export const InputText: FC<InputTextProps> = props => {
       <input
         {...other}
         type="text"
+        id={id}
         className="block w-full rounded-lg border border-slate-300 bg-slate-50 p-1.5 text-base text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
       />
     </div>
