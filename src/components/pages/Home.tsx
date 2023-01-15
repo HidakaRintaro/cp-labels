@@ -52,7 +52,7 @@ export const Home: FC = () => {
     <>
       <Head title="cp labels" />
       <div className="container mx-auto px-2">
-        <h1 className="my-2 text-3xl font-bold">mv labels</h1>
+        <h1 className="my-2 text-3xl font-bold">cp labels</h1>
         <hr className="mb-2" />
         <div className="md:flex md:gap-5">
           <div className="basis-1/2">
