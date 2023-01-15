@@ -54,24 +54,33 @@ export const Home: FC = () => {
           <h2 className="text-xl font-bold">export</h2>
           <div className="mb-6 gap-6">
             <div className="mb-3">
-              <label className="mb-1 block text-sm font-medium text-slate-900">owner</label>
+              <label htmlFor="export-owner" className="mb-1 block text-sm font-medium text-slate-900">
+                owner
+              </label>
               <input
+                id="export-owner"
                 className="block h-8 w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 onChange={event => setExportOwner(event.target.value)}
                 value={exportOwner}
               />
             </div>
             <div className="mb-3">
-              <label className="mb-1 block text-sm font-medium text-slate-900">repo</label>
+              <label htmlFor="export-repo" className="mb-1 block text-sm font-medium text-slate-900">
+                repo
+              </label>
               <input
+                id="export-repo"
                 className="block h-8 w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 onChange={event => setExportRepo(event.target.value)}
                 value={exportRepo}
               />
             </div>
             <div className="mb-3">
-              <label className="mb-1 block text-sm font-medium text-slate-900">token</label>
+              <label htmlFor="export-token" className="mb-1 block text-sm font-medium text-slate-900">
+                token
+              </label>
               <input
+                id="export-token"
                 className="block h-8 w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 onChange={event => setExportToken(event.target.value)}
                 value={exportToken}
@@ -92,24 +101,33 @@ export const Home: FC = () => {
           <h2 className="text-xl font-bold">import</h2>
           <div className="mb-6 gap-6">
             <div className="mb-3">
-              <label className="mb-1 block text-sm font-medium text-slate-900">owner</label>
+              <label htmlFor="import-owner" className="mb-1 block text-sm font-medium text-slate-900">
+                owner
+              </label>
               <input
+                id="import-owner"
                 className="block h-8 w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 onChange={event => setImportOwner(event.target.value)}
                 value={importOwner}
               />
             </div>
             <div className="mb-3">
-              <label className="mb-1 block text-sm font-medium text-slate-900">repo</label>
+              <label htmlFor="import-repo" className="mb-1 block text-sm font-medium text-slate-900">
+                repo
+              </label>
               <input
+                id="import-repo"
                 className="block h-8 w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 onChange={event => setImportRepo(event.target.value)}
                 value={importRepo}
               />
             </div>
             <div className="mb-3">
-              <label className="mb-1 block text-sm font-medium text-slate-900">token</label>
+              <label htmlFor="import-token" className="mb-1 block text-sm font-medium text-slate-900">
+                token
+              </label>
               <input
+                id="import-token"
                 className="block h-8 w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1  focus:ring-blue-500"
                 onChange={event => setImportToken(event.target.value)}
                 value={importToken}
