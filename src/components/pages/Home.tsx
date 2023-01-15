@@ -1,6 +1,8 @@
 import { FC, useCallback, useEffect, useState } from 'react'
 
+import { Button } from '~/components/atoms/Button'
 import { Head } from '~/components/atoms/Head'
+import { InputText } from '~/components/atoms/InputText'
 import { LabelsTable } from '~/components/organisms/LabelsTable'
 import { useGetLabels } from '~/hooks/useGetLabels'
 import { useMoveLabels } from '~/hooks/useMoveLabels'
@@ -56,102 +58,69 @@ export const Home: FC = () => {
           <div className="basis-1/2">
             <h2 className="text-xl font-bold">export</h2>
             <div className="mb-6 gap-6">
-              <div className="mb-3">
-                <label htmlFor="export-owner" className="mb-1 block text-sm font-medium text-slate-900">
-                  owner
-                </label>
-                <input
-                  id="export-owner"
-                  className="block h-8 w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                  onChange={event => setExportOwner(event.target.value)}
-                  value={exportOwner}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="export-repo" className="mb-1 block text-sm font-medium text-slate-900">
-                  repo
-                </label>
-                <input
-                  id="export-repo"
-                  className="block h-8 w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                  onChange={event => setExportRepo(event.target.value)}
-                  value={exportRepo}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="export-token" className="mb-1 block text-sm font-medium text-slate-900">
-                  token
-                </label>
-                <input
-                  id="export-token"
-                  className="block h-8 w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                  onChange={event => setExportToken(event.target.value)}
-                  value={exportToken}
-                />
-              </div>
-              <button
-                className="shrink-0 cursor-pointer rounded-lg border border-slate-300 bg-slate-50 py-1 px-6 font-bold disabled:cursor-not-allowed disabled:border-slate-200 disabled:text-slate-500 disabled:shadow-none"
+              <InputText
+                labelTitle="owner"
+                id="export-owner"
+                value={exportOwner}
+                onChange={event => setExportOwner(event.target.value)}
+              />
+              <InputText
+                labelTitle="repo"
+                id="export-repo"
+                value={exportRepo}
+                onChange={event => setExportRepo(event.target.value)}
+              />
+              <InputText
+                labelTitle="token"
+                id="export-token"
+                value={exportToken}
+                onChange={event => setExportToken(event.target.value)}
+              />
+              <Button
                 disabled={exportOwner === '' || exportRepo === '' || exportToken === ''}
                 onClick={useCallback(() => {
                   getExportLabels({ owner: exportOwner, repo: exportRepo, token: exportToken })
                 }, [exportOwner, exportRepo, exportToken])}
               >
                 Get Label
-              </button>
+              </Button>
             </div>
           </div>
           <div className="basis-1/2">
             <h2 className="text-xl font-bold">import</h2>
             <div className="mb-6 gap-6">
-              <div className="mb-3">
-                <label htmlFor="import-owner" className="mb-1 block text-sm font-medium text-slate-900">
-                  owner
-                </label>
-                <input
-                  id="import-owner"
-                  className="block h-8 w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                  onChange={event => setImportOwner(event.target.value)}
-                  value={importOwner}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="import-repo" className="mb-1 block text-sm font-medium text-slate-900">
-                  repo
-                </label>
-                <input
-                  id="import-repo"
-                  className="block h-8 w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                  onChange={event => setImportRepo(event.target.value)}
-                  value={importRepo}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="import-token" className="mb-1 block text-sm font-medium text-slate-900">
-                  token
-                </label>
-                <input
-                  id="import-token"
-                  className="block h-8 w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1  focus:ring-blue-500"
-                  onChange={event => setImportToken(event.target.value)}
-                  value={importToken}
-                />
-              </div>
-              <button
-                className="shrink-0 cursor-pointer rounded-lg border border-slate-300 bg-slate-50 py-1 px-6 font-bold disabled:cursor-not-allowed disabled:border-slate-200 disabled:text-slate-500 disabled:shadow-none"
+              <InputText
+                labelTitle="owner"
+                id="import-owner"
+                value={importOwner}
+                onChange={event => setImportOwner(event.target.value)}
+              />
+              <InputText
+                labelTitle="repo"
+                id="import-repo"
+                value={importRepo}
+                onChange={event => setImportRepo(event.target.value)}
+              />
+              <InputText
+                labelTitle="token"
+                id="import-token"
+                value={importToken}
+                onChange={event => setImportToken(event.target.value)}
+              />
+              <Button
                 disabled={importOwner === '' || importRepo === '' || importToken === ''}
                 onClick={useCallback(() => {
                   getImportLabels({ owner: importOwner, repo: importRepo, token: importToken })
                 }, [importOwner, importRepo, importToken])}
               >
                 Get Label
-              </button>
+              </Button>
             </div>
           </div>
         </div>
         <hr className="mb-2" />
         <div className="mb-2 flex items-center gap-5">
-          <button
-            className="shrink-0 cursor-pointer rounded-lg border bg-green-300 py-1 px-6 font-bold disabled:cursor-not-allowed disabled:border-slate-200 disabled:bg-green-100 disabled:text-slate-500 disabled:shadow-none"
+          <Button
             disabled={
               exportLabels.length === 0 ||
               importOwner === '' ||
@@ -160,15 +129,33 @@ export const Home: FC = () => {
               isPostLoading
             }
             onClick={handleSubmit}
+            color="green"
           >
             {isPostLoading ? (
-              <div className="flex justify-center">
-                <div className="h-6 w-6 animate-spin rounded-full border-4 border-green-500 border-t-transparent"></div>
+              <div className="inline-flex items-center text-center">
+                <svg
+                  aria-hidden="true"
+                  role="status"
+                  className="mr-3 inline h-4 w-4 animate-spin text-white"
+                  viewBox="0 0 100 101"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                    fill="#E5E7EB"
+                  />
+                  <path
+                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span>Loading...</span>
               </div>
             ) : (
-              <span>Move Label</span>
+              'Move Label'
             )}
-          </button>
+          </Button>
           <div>
             {isPostError ? (
               <p className="text-sm text-red-500">ラベルの登録に失敗しました</p>
