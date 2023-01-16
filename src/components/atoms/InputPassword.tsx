@@ -26,7 +26,11 @@ export const InputPassword: FC<InputPasswordProps> = props => {
           id={id}
           className="block w-full rounded-lg border border-slate-300 bg-slate-50 p-1.5 text-base text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
-        <button className="absolute left-auto right-3 top-2 text-slate-500" onClick={() => setIsReveal(b => !b)}>
+        <button
+          aria-label="Toggle token display"
+          className="absolute left-auto right-3 top-2 text-slate-500"
+          onClick={() => setIsReveal(b => !b)}
+        >
           {isReveal ? (
             <EyeIcon className="h-6 w-6 fill-none stroke-current stroke-2" />
           ) : (
