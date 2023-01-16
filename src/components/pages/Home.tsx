@@ -2,6 +2,7 @@ import { FC, useCallback, useEffect, useState } from 'react'
 
 import { Button } from '~/components/atoms/Button'
 import { Head } from '~/components/atoms/Head'
+import { InputPassword } from '~/components/atoms/InputPassword'
 import { InputText } from '~/components/atoms/InputText'
 import { LabelsTable } from '~/components/organisms/LabelsTable'
 import { useGetLabels } from '~/hooks/useGetLabels'
@@ -67,7 +68,7 @@ export const Home: FC = () => {
                 value={exportRepo}
                 onChange={event => setExportRepo(event.target.value)}
               />
-              <InputText
+              <InputPassword
                 labelTitle="token"
                 id="export-token"
                 value={exportToken}
@@ -98,7 +99,7 @@ export const Home: FC = () => {
                 value={importRepo}
                 onChange={event => setImportRepo(event.target.value)}
               />
-              <InputText
+              <InputPassword
                 labelTitle="token"
                 id="import-token"
                 value={importToken}
