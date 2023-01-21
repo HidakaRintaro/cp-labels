@@ -13,7 +13,7 @@ export const Head: FC<HeadProps> = props => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta
         name="description"
-        content="GitHubでリポジトリ間のLabelのコピーができるツールです。 A tool that allows you to copy Label between repositories on GitHub."
+        content="GitHubのリポジトリ間でLabelのコピーができるツールです。 A tool that allows you to copy Label between repositories on GitHub."
       />
       {/* Google tag (gtag.js) */}
       <script
