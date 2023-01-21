@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  GA4_MEASUREMENT_ID: string
+  VITE_GA4_MEASUREMENT_ID: string
 }
 
 interface ImportMeta {

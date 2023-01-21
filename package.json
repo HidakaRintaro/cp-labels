@@ -1,7 +1,7 @@
 {
-  "name": "mv-labels",
-  "version": "0.0.0",
-  "repository": "https://github.com/HidakaRintaro/mv-labels",
+  "name": "cp-labels",
+  "version": "0.1.0",
+  "repository": "https://github.com/HidakaRintaro/cp-labels",
   "author": "HidakaRintaro <53255166+HidakaRintaro@users.noreply.github.com>",
   "private": true,
   "type": "module",
